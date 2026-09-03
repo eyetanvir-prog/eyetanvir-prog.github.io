@@ -1,1546 +1,547 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tanvir Ahmed — Senior Software Engineer</title>
-  <meta name="description" content="Senior Software Engineer with 10+ years in .NET, APIs, Microservices, CI/CD, Docker, and Jenkins." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
-  <style>
-    /* ═══════════════════════════════════════════
-       TOKENS
-    ═══════════════════════════════════════════ */
-    :root {
-      --bg:        #050d1a;
-      --bg2:       #091220;
-      --bg3:       #0d1f38;
-      --bg4:       #0f2545;
-      --cyan:      #00d4ff;
-      --cyan-dim:  #00aacc;
-      --purple:    #8b5cf6;
-      --green:     #10b981;
-      --text:      #f1f5f9;
-      --text2:     #94a3b8;
-      --text3:     #64748b;
-      --border:    rgba(0,212,255,.14);
-      --card-bg:   rgba(13,31,56,.8);
-      --shadow:    0 4px 32px rgba(0,0,0,.5);
-      --radius:    14px;
-      --radius-sm: 8px;
-      --nav-h:     70px;
-      --font-body: 'Inter', sans-serif;
-      --font-head: 'Space Grotesk', sans-serif;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tanvir Ahmed - Senior Software Engineer</title>
+<meta name="description" content="Tanvir Ahmed - Senior Software Engineer with 10+ years building enterprise .NET applications, REST APIs, microservices, and CI/CD pipelines." />
+<meta name="author" content="Tanvir Ahmed" />
+<meta name="theme-color" content="#090909" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Tanvir Ahmed - Senior Software Engineer" />
+<meta property="og:description" content="10+ years designing and shipping enterprise-grade .NET systems, APIs, and CI/CD pipelines." />
+<meta property="og:image" content="./profile.jpg" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>T</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+<style>
+:root {
+  --bg: #f4f1ea;
+  --bg2: #e8e2d6;
+  --ink: #101010;
+  --ink2: #2a2a2a;
+  --muted: #5c574e;
+  --line: rgba(16,16,16,.12);
+  --card: #fffdf8;
+  --ember: #e4451a;
+  --ember-2: #b83312;
+  --on-ember: #fff;
+  --shadow: 0 22px 50px -24px rgba(16,16,16,.3);
+  --nav-h: 74px;
+  --display: "Syne", sans-serif;
+  --body: "Manrope", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, monospace;
+  color-scheme: light;
+}
+html[data-theme="dark"] {
+  --bg: #090909;
+  --bg2: #121212;
+  --ink: #f4f1ea;
+  --ink2: #ddd6c8;
+  --muted: #9c9588;
+  --line: rgba(244,241,234,.12);
+  --card: #141414;
+  --ember: #ff5c32;
+  --ember-2: #ff7a55;
+  --on-ember: #090909;
+  --shadow: 0 22px 60px -20px rgba(0,0,0,.7);
+  color-scheme: dark;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--body);
+  background: var(--bg);
+  color: var(--ink2);
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  transition: background .4s ease, color .4s ease;
+}
+body::before {
+  content: "";
+  position: fixed; inset: 0; pointer-events: none; z-index: 0;
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(ellipse at 50% 0%, #000 20%, transparent 75%);
+  opacity: .55;
+}
+a { color: var(--ember); text-decoration: none; }
+img { max-width: 100%; display: block; }
+::selection { background: var(--ember); color: var(--on-ember); }
 
-    /* ═══════════════════════════════════════════
-       RESET & BASE
-    ═══════════════════════════════════════════ */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: var(--font-body);
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-      overflow-x: hidden;
-    }
-    a { color: var(--cyan); text-decoration: none; transition: color .2s; }
-    a:hover { color: #fff; }
-    img { max-width: 100%; }
-    ::selection { background: var(--cyan); color: #000; }
-    ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: var(--bg); }
-    ::-webkit-scrollbar-thumb { background: var(--cyan-dim); border-radius: 3px; }
+.wrap { max-width: 1180px; margin: 0 auto; padding: 0 28px; position: relative; z-index: 1; }
+.section { padding: 108px 0; position: relative; z-index: 1; }
+.kicker {
+  font-family: var(--mono); font-size: .72rem; letter-spacing: .28em; text-transform: uppercase;
+  color: var(--ember); margin-bottom: 14px; display: inline-flex; gap: 10px; align-items: center;
+}
+.kicker::before { content: "//"; }
+.display { font-family: var(--display); font-weight: 800; color: var(--ink); letter-spacing: -.04em; line-height: .92; }
+.title { font-size: clamp(2.5rem, 6vw, 4.6rem); margin-bottom: 16px; }
+.sub { max-width: 620px; color: var(--muted); margin-bottom: 48px; font-size: 1.05rem; }
 
-    /* ═══════════════════════════════════════════
-       UTILITY
-    ═══════════════════════════════════════════ */
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-    .section { padding: 96px 0; }
-    .section-label {
-      font-family: var(--font-head);
-      font-size: .75rem;
-      font-weight: 600;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-      color: var(--cyan);
-      margin-bottom: 12px;
-    }
-    .section-title {
-      font-family: var(--font-head);
-      font-size: clamp(1.8rem, 4vw, 2.6rem);
-      font-weight: 800;
-      color: var(--text);
-      margin-bottom: 16px;
-      line-height: 1.2;
-    }
-    .section-sub {
-      color: var(--text2);
-      font-size: 1.05rem;
-      max-width: 600px;
-      margin-bottom: 56px;
-    }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 13px 28px;
-      border-radius: 50px;
-      font-family: var(--font-head);
-      font-weight: 600;
-      font-size: .95rem;
-      cursor: pointer;
-      transition: all .25s;
-      border: none;
-      text-decoration: none;
-    }
-    .btn-primary {
-      background: var(--cyan);
-      color: #000;
-    }
-    .btn-primary:hover {
-      background: #fff;
-      color: #000;
-      transform: translateY(-2px);
-    }
-    .btn-outline {
-      background: transparent;
-      color: var(--cyan);
-      border: 1.5px solid var(--cyan);
-    }
-    .btn-outline:hover {
-      background: var(--cyan);
-      color: #000;
-      transform: translateY(-2px);
-    }
-    .tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 5px 13px;
-      border-radius: 50px;
-      font-size: .8rem;
-      font-weight: 500;
-      border: 1px solid var(--border);
-      background: var(--bg3);
-      color: var(--text2);
-      transition: all .2s;
-    }
-    .tag:hover {
-      border-color: var(--cyan);
-      color: var(--cyan);
-      background: rgba(0,212,255,.07);
-    }
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 13px 24px; border-radius: 8px; font-weight: 700; font-size: .92rem;
+  border: 1px solid transparent; cursor: pointer; transition: transform .2s, background .2s, color .2s;
+  text-decoration: none; white-space: nowrap; font-family: var(--body);
+}
+.btn-solid { background: var(--ember); color: var(--on-ember); }
+.btn-solid:hover { transform: translateY(-2px); color: var(--on-ember); }
+.btn-line { background: transparent; color: var(--ink); border-color: var(--line); }
+.btn-line:hover { border-color: var(--ember); color: var(--ember); }
 
-    /* ═══════════════════════════════════════════
-       ANIMATED BACKGROUND BLOBS
-    ═══════════════════════════════════════════ */
-    .blob-wrap {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 0;
-      overflow: hidden;
-    }
-    .blob {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(90px);
-      opacity: .18;
-      animation: drift 18s ease-in-out infinite alternate;
-    }
-    .blob-1 { width: 500px; height: 500px; background: var(--cyan);   top: -150px; left: -150px; animation-duration: 20s; }
-    .blob-2 { width: 400px; height: 400px; background: var(--purple); bottom: -120px; right: -100px; animation-duration: 24s; animation-delay: -8s; }
-    .blob-3 { width: 300px; height: 300px; background: var(--green);  top: 50%; left: 50%; animation-duration: 16s; animation-delay: -4s; }
-    @keyframes drift {
-      from { transform: translate(0, 0) scale(1); }
-      to   { transform: translate(60px, 40px) scale(1.12); }
-    }
+nav {
+  position: fixed; inset: 0 0 auto 0; height: var(--nav-h); z-index: 50;
+  display: flex; align-items: center;
+}
+nav.scrolled { background: color-mix(in srgb, var(--bg) 86%, transparent); backdrop-filter: blur(16px); border-bottom: 1px solid var(--line); }
+.nav-row { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.logo { font-family: var(--display); font-weight: 800; font-size: 1.35rem; color: var(--ink); }
+.logo span { color: var(--ember); }
+.links { display: flex; gap: 22px; list-style: none; }
+.links a { color: var(--muted); font-size: .86rem; font-weight: 600; }
+.links a:hover { color: var(--ink); }
+.nav-right { display: flex; align-items: center; gap: 10px; }
+.theme-switch {
+  display: flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; background: var(--card);
+}
+.theme-switch button {
+  border: 0; background: transparent; color: var(--muted); font-family: var(--mono);
+  font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; padding: 9px 12px; cursor: pointer;
+}
+.theme-switch button.on { background: var(--ink); color: var(--bg); }
+.burger { display: none; background: none; border: 0; color: var(--ink); font-size: 1.2rem; cursor: pointer; }
+.mobile {
+  display: none; position: fixed; inset: var(--nav-h) 0 0 0; background: var(--bg); z-index: 40;
+  flex-direction: column; align-items: center; justify-content: center; gap: 26px;
+}
+.mobile.open { display: flex; }
+.mobile a { font-family: var(--display); font-size: 2rem; color: var(--ink); font-weight: 700; }
 
-    /* ═══════════════════════════════════════════
-       NAVBAR
-    ═══════════════════════════════════════════ */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      height: var(--nav-h);
-      z-index: 1000;
-      transition: background .3s, border-color .3s;
-    }
-    nav.scrolled {
-      background: rgba(5,13,26,.85);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 24px;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .nav-logo {
-      font-family: var(--font-head);
-      font-size: 1.2rem;
-      font-weight: 800;
-      color: var(--text);
-    }
-    .nav-logo span { color: var(--cyan); }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 32px;
-      list-style: none;
-    }
-    .nav-links a {
-      font-size: .9rem;
-      font-weight: 500;
-      color: var(--text2);
-      transition: color .2s;
-      position: relative;
-    }
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: -4px; left: 0;
-      width: 0; height: 2px;
-      background: var(--cyan);
-      transition: width .25s;
-    }
-    .nav-links a:hover { color: var(--cyan); }
-    .nav-links a:hover::after { width: 100%; }
-    .nav-cta {
-      padding: 9px 22px !important;
-      font-size: .85rem !important;
-    }
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      padding: 4px;
-    }
-    .hamburger span {
-      display: block;
-      width: 24px; height: 2px;
-      background: var(--text);
-      border-radius: 2px;
-      transition: all .3s;
-    }
-    .mobile-menu {
-      display: none;
-      position: fixed;
-      inset: var(--nav-h) 0 0 0;
-      background: rgba(5,13,26,.97);
-      backdrop-filter: blur(20px);
-      z-index: 999;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 36px;
-    }
-    .mobile-menu.open { display: flex; }
-    .mobile-menu a {
-      font-family: var(--font-head);
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: var(--text);
-      transition: color .2s;
-    }
-    .mobile-menu a:hover { color: var(--cyan); }
+#hero { min-height: 100vh; display: grid; align-items: center; padding: calc(var(--nav-h) + 28px) 0 40px; }
+.hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 40px; align-items: center; }
+.badge {
+  display: inline-flex; gap: 8px; align-items: center; border: 1px solid var(--line); border-radius: 999px;
+  padding: 7px 12px; font-family: var(--mono); font-size: .7rem; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 18px; background: var(--card);
+}
+.dot { width: 8px; height: 8px; border-radius: 50%; background: #2f9e63; }
+.name { font-size: clamp(4rem, 11vw, 8.2rem); margin-bottom: 8px; }
+.name em { font-style: normal; color: var(--ember); }
+.role { font-size: 1.15rem; margin-bottom: 20px; color: var(--muted); }
+.role b { color: var(--ink); }
+.cursor { color: var(--ember); animation: blink .8s step-end infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+.lead { max-width: 540px; margin-bottom: 28px; }
+.ctas { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 22px; }
+.socials { display: flex; gap: 8px; }
+.socials a {
+  width: 42px; height: 42px; display: grid; place-items: center; border: 1px solid var(--line);
+  color: var(--ink); border-radius: 8px; background: var(--card);
+}
+.socials a:hover { background: var(--ember); color: var(--on-ember); border-color: var(--ember); }
 
-    /* ═══════════════════════════════════════════
-       HERO
-    ═══════════════════════════════════════════ */
-    #hero {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding-top: var(--nav-h);
-      z-index: 1;
-    }
-    .hero-content { max-width: 760px; }
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 7px 16px;
-      border-radius: 50px;
-      border: 1px solid var(--border);
-      background: rgba(0,212,255,.06);
-      font-size: .8rem;
-      font-weight: 500;
-      color: var(--cyan);
-      margin-bottom: 28px;
-    }
-    .hero-badge span { width: 8px; height: 8px; background: var(--green); border-radius: 50%; animation: pulse 2s infinite; }
-    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(1.3)} }
-    .hero-name {
-      font-family: var(--font-head);
-      font-size: clamp(2.8rem, 8vw, 5.5rem);
-      font-weight: 800;
-      line-height: 1.05;
-      color: var(--text);
-      margin-bottom: 16px;
-    }
-    .hero-name .accent { color: var(--cyan); }
-    .hero-title {
-      font-family: var(--font-head);
-      font-size: clamp(1rem, 2.5vw, 1.4rem);
-      font-weight: 500;
-      color: var(--text2);
-      margin-bottom: 24px;
-      min-height: 2em;
-    }
-    .hero-title .typewriter { color: var(--cyan); font-weight: 600; }
-    .cursor-blink { animation: blink .8s step-end infinite; color: var(--cyan); }
-    @keyframes blink { 50%{ opacity: 0; } }
-    .hero-desc {
-      font-size: 1.05rem;
-      color: var(--text2);
-      max-width: 580px;
-      margin-bottom: 40px;
-      line-height: 1.8;
-    }
-    .hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 48px; }
-    .hero-socials {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-    .hero-socials a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 42px; height: 42px;
-      border-radius: 50%;
-      border: 1px solid var(--border);
-      background: var(--bg3);
-      color: var(--text2);
-      font-size: 1rem;
-      transition: all .25s;
-    }
-    .hero-socials a:hover {
-      border-color: var(--cyan);
-      color: var(--cyan);
-      background: rgba(0,212,255,.08);
-      transform: translateY(-3px);
-    }
-    .hero-stats {
-      position: absolute;
-      bottom: 40px; right: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-    .hero-stat {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 16px 22px;
-      backdrop-filter: blur(12px);
-      text-align: center;
-    }
-    .hero-stat .num {
-      font-family: var(--font-head);
-      font-size: 1.8rem;
-      font-weight: 800;
-      color: var(--cyan);
-      display: block;
-    }
-    .hero-stat .lbl {
-      font-size: .75rem;
-      color: var(--text3);
-      display: block;
-    }
-    .scroll-hint {
-      position: absolute;
-      bottom: 36px; left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-      color: var(--text3);
-      font-size: .75rem;
-    }
-    .scroll-hint .wheel {
-      width: 22px; height: 36px;
-      border: 2px solid var(--text3);
-      border-radius: 12px;
-      display: flex;
-      justify-content: center;
-      padding-top: 6px;
-    }
-    .scroll-hint .dot {
-      width: 4px; height: 8px;
-      background: var(--cyan);
-      border-radius: 2px;
-      animation: scroll-dot 2s infinite;
-    }
-    @keyframes scroll-dot { 0%{transform:translateY(0);opacity:1} 100%{transform:translateY(12px);opacity:0} }
+.shot { position: relative; justify-self: center; }
+.shot img {
+  width: min(360px, 82vw); aspect-ratio: 1; object-fit: cover; object-position: center top;
+  border-radius: 28px; box-shadow: var(--shadow);
+}
+.ring { position: absolute; inset: -12px; border: 1px solid var(--ember); border-radius: 34px; pointer-events: none; }
+.chip {
+  position: absolute; background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+  padding: 10px 14px; box-shadow: var(--shadow); font-family: var(--mono); font-size: .72rem;
+}
+.chip b { display: block; font-family: var(--display); font-size: 1.15rem; color: var(--ink); }
+.chip-1 { top: 18px; left: -46px; }
+.chip-2 { bottom: 28px; right: -36px; }
 
-    /* ── Hero photo ── */
-    .hero-inner {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      align-items: center;
-      gap: 64px;
-    }
-    .hero-photo-wrap {
-      position: relative;
-      flex-shrink: 0;
-    }
-    .hero-photo-ring {
-      width: 300px;
-      height: 300px;
-      border-radius: 50%;
-      padding: 4px;
-      background: linear-gradient(135deg, var(--cyan), var(--purple));
-      flex-shrink: 0;
-    }
-    .hero-photo-inner {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      overflow: hidden;
-      background: var(--bg2);
-      border: 4px solid var(--bg);
-    }
-    .hero-photo-inner img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-      display: block;
-    }
-    .hero-photo-glow {
-      position: absolute;
-      inset: -20px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(0,212,255,.18) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .hero-photo-badge {
-      position: absolute;
-      bottom: 12px;
-      right: -8px;
-      background: var(--bg3);
-      border: 1px solid var(--border);
-      border-radius: 50px;
-      padding: 8px 16px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: .78rem;
-      font-weight: 600;
-      color: var(--text);
-      backdrop-filter: blur(12px);
-      white-space: nowrap;
-    }
-    .hero-photo-badge i { color: var(--cyan); }
-    @media (max-width: 900px) {
-      .hero-inner {
-        grid-template-columns: 1fr;
-        justify-items: center;
-      }
-      .hero-content { text-align: center; }
-      .hero-ctas { justify-content: center; }
-      .hero-socials { justify-content: center; }
-      .hero-photo-ring { width: 220px; height: 220px; }
-      .hero-photo-wrap { order: -1; }
-    }
-    @media (max-width: 480px) {
-      .hero-photo-ring { width: 180px; height: 180px; }
-    }
+.ticker {
+  border-block: 1px solid var(--line); background: var(--bg2); overflow: hidden; padding: 14px 0; position: relative; z-index: 1;
+}
+.ticker-track { display: flex; gap: 40px; width: max-content; animation: slide 26s linear infinite; }
+.ticker-track span { font-family: var(--mono); font-size: .78rem; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
+@keyframes slide { to { transform: translateX(-50%); } }
 
-    /* ═══════════════════════════════════════════
-       ABOUT
-    ═══════════════════════════════════════════ */
-    #about { background: var(--bg2); position: relative; z-index: 1; }
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      align-items: center;
-    }
-    .about-text p {
-      color: var(--text2);
-      margin-bottom: 16px;
-      font-size: 1rem;
-      line-height: 1.85;
-    }
-    .about-text p strong { color: var(--cyan); font-weight: 600; }
-    .about-highlights {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 28px;
-    }
-    .about-highlight {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--text2);
-      font-size: .9rem;
-    }
-    .about-highlight i { color: var(--cyan); width: 16px; }
-    .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-    .about-stat {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 28px 24px;
-      text-align: center;
-      transition: border-color .25s, transform .25s;
-      backdrop-filter: blur(8px);
-    }
-    .about-stat:hover { border-color: var(--cyan); transform: translateY(-4px); }
-    .about-stat .num {
-      font-family: var(--font-head);
-      font-size: 2.4rem;
-      font-weight: 800;
-      color: var(--cyan);
-      display: block;
-      line-height: 1;
-    }
-    .about-stat .lbl { font-size: .8rem; color: var(--text3); margin-top: 6px; display: block; }
+.about-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 56px; align-items: center; }
+.about-photo { position: relative; }
+.about-photo img {
+  width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: center top;
+  border-radius: 28px; box-shadow: var(--shadow); background: #111;
+}
+.about-photo::after {
+  content: ""; position: absolute; inset: 14px; border: 1px solid var(--ember);
+  border-radius: 22px; pointer-events: none;
+}
+.stat-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; margin-top: 36px; }
+.stat {
+  background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 22px;
+}
+.stat b { display: block; font-family: var(--display); font-size: 2.4rem; color: var(--ink); line-height: 1; }
+.stat span { color: var(--muted); font-size: .82rem; }
+.facts { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 22px; }
+.facts div { display: flex; gap: 8px; align-items: center; color: var(--ink); font-size: .92rem; }
+.facts i { color: var(--ember); width: 16px; }
 
-    /* ═══════════════════════════════════════════
-       SKILLS
-    ═══════════════════════════════════════════ */
-    #skills { position: relative; z-index: 1; }
-    .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .skill-group {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 28px;
-      backdrop-filter: blur(8px);
-      transition: border-color .25s;
-    }
-    .skill-group:hover { border-color: var(--cyan); }
-    .skill-group-title {
-      font-family: var(--font-head);
-      font-size: .85rem;
-      font-weight: 700;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: var(--cyan);
-      margin-bottom: 16px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.skills { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
+.skill { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 22px; min-height: 210px; }
+.skill small { font-family: var(--mono); font-size: .68rem; letter-spacing: .16em; color: var(--ember); }
+.skill h3 { font-family: var(--display); font-size: 1.35rem; color: var(--ink); margin: 8px 0 14px; }
+.tags { display: flex; flex-wrap: wrap; gap: 7px; }
+.tag { border: 1px solid var(--line); border-radius: 999px; padding: 5px 10px; font-size: .76rem; color: var(--ink2); }
 
-    /* ═══════════════════════════════════════════
-       EXPERIENCE TIMELINE
-    ═══════════════════════════════════════════ */
-    #experience { background: var(--bg2); position: relative; z-index: 1; }
-    .timeline { position: relative; padding-left: 36px; }
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 10px; top: 8px; bottom: 8px;
-      width: 2px;
-      background: linear-gradient(to bottom, var(--cyan), var(--purple), transparent);
-      border-radius: 2px;
-    }
-    .tl-item {
-      position: relative;
-      margin-bottom: 48px;
-    }
-    .tl-item:last-child { margin-bottom: 0; }
-    .tl-dot {
-      position: absolute;
-      left: -30px;
-      top: 6px;
-      width: 14px; height: 14px;
-      border-radius: 50%;
-      background: var(--bg);
-      border: 2.5px solid var(--cyan);
-      transition: background .2s, transform .2s;
-    }
-    .tl-item:hover .tl-dot { background: var(--cyan); transform: scale(1.3); }
-    .tl-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 28px 32px;
-      backdrop-filter: blur(8px);
-      transition: border-color .25s, transform .25s;
-    }
-    .tl-item:hover .tl-card { border-color: rgba(0,212,255,.4); transform: translateX(4px); }
-    .tl-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 6px; }
-    .tl-role {
-      font-family: var(--font-head);
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--text);
-    }
-    .tl-period {
-      font-size: .8rem;
-      font-weight: 600;
-      color: var(--cyan);
-      background: rgba(0,212,255,.1);
-      border: 1px solid rgba(0,212,255,.2);
-      padding: 4px 12px;
-      border-radius: 50px;
-      white-space: nowrap;
-    }
-    .tl-company {
-      font-size: .95rem;
-      font-weight: 600;
-      color: var(--purple);
-      margin-bottom: 14px;
-    }
-    .tl-location { color: var(--text3); font-size: .8rem; margin-left: 4px; }
-    .tl-bullets { list-style: none; }
-    .tl-bullets li {
-      color: var(--text2);
-      font-size: .9rem;
-      padding: 4px 0 4px 20px;
-      position: relative;
-      line-height: 1.6;
-    }
-    .tl-bullets li::before {
-      content: '▸';
-      position: absolute;
-      left: 0;
-      color: var(--cyan);
-      font-size: .8rem;
-    }
+.job {
+  display: grid; grid-template-columns: 170px 1fr; gap: 22px;
+  border: 1px solid var(--line); background: var(--card); border-radius: 16px; padding: 24px; margin-bottom: 14px;
+}
+.job-year { font-family: var(--display); font-size: 1.6rem; color: var(--ink); }
+.job-year small { display: block; font-family: var(--mono); font-size: .68rem; color: var(--ember); letter-spacing: .08em; margin-top: 6px; }
+.job h3 { font-family: var(--display); font-size: 1.35rem; color: var(--ink); }
+.job h4 { color: var(--ember-2); font-size: .9rem; font-weight: 600; margin: 4px 0 10px; }
+.job ul { padding-left: 18px; color: var(--muted); }
+.job li { margin: 5px 0; }
 
-    /* ═══════════════════════════════════════════
-       PROJECTS
-    ═══════════════════════════════════════════ */
-    #projects { position: relative; z-index: 1; }
-    .projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-    .project-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 32px;
-      backdrop-filter: blur(8px);
-      transition: border-color .25s, transform .25s;
-      display: flex;
-      flex-direction: column;
-    }
-    .project-card:hover { border-color: var(--cyan); transform: translateY(-6px); }
-    .project-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 14px; }
-    .project-icon {
-      width: 48px; height: 48px;
-      border-radius: var(--radius-sm);
-      background: rgba(0,212,255,.12);
-      border: 1px solid rgba(0,212,255,.2);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.2rem;
-      color: var(--cyan);
-    }
-    .project-num {
-      font-family: var(--font-head);
-      font-size: .75rem;
-      font-weight: 700;
-      color: var(--text3);
-    }
-    .project-title {
-      font-family: var(--font-head);
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 10px;
-    }
-    .project-desc {
-      color: var(--text2);
-      font-size: .9rem;
-      line-height: 1.7;
-      margin-bottom: 20px;
-      flex: 1;
-    }
-    .project-tags { display: flex; flex-wrap: wrap; gap: 7px; }
-    .project-tag {
-      font-size: .72rem;
-      padding: 3px 10px;
-      border-radius: 50px;
-      background: rgba(139,92,246,.12);
-      border: 1px solid rgba(139,92,246,.25);
-      color: var(--purple);
-      font-weight: 500;
-    }
+.proj-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.proj {
+  position: relative; overflow: hidden; background: var(--card); border: 1px solid var(--line);
+  border-radius: 16px; padding: 26px; min-height: 270px; display: flex; flex-direction: column;
+}
+.proj-no { position: absolute; right: 12px; top: 0; font-family: var(--display); font-size: 5rem; color: var(--ink); opacity: .08; }
+.proj h3 { font-family: var(--display); font-size: 1.4rem; color: var(--ink); margin: 8px 0 10px; position: relative; }
+.proj p { color: var(--muted); flex: 1; position: relative; }
+.metrics { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; position: relative; }
 
-    /* ═══════════════════════════════════════════
-       EDUCATION
-    ═══════════════════════════════════════════ */
-    #education { background: var(--bg2); position: relative; z-index: 1; }
-    .edu-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-    .edu-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 28px 32px;
-      backdrop-filter: blur(8px);
-      transition: border-color .25s, transform .25s;
-      display: flex;
-      gap: 20px;
-    }
-    .edu-card:hover { border-color: var(--cyan); transform: translateY(-4px); }
-    .edu-icon {
-      width: 48px; height: 48px;
-      border-radius: var(--radius-sm);
-      background: rgba(0,212,255,.1);
-      border: 1px solid rgba(0,212,255,.2);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.2rem;
-      color: var(--cyan);
-      flex-shrink: 0;
-    }
-    .edu-degree {
-      font-family: var(--font-head);
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 4px;
-    }
-    .edu-school {
-      font-size: .9rem;
-      color: var(--cyan);
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-    .edu-meta { font-size: .8rem; color: var(--text3); }
+.edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.edu, .lang {
+  background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 20px;
+}
+.edu b, .lang b { display: block; color: var(--ink); font-family: var(--display); font-size: 1.15rem; }
+.edu em, .lang em { font-style: normal; color: var(--ember-2); font-size: .9rem; }
+.edu span, .lang span { color: var(--muted); font-size: .82rem; }
 
-    /* ═══════════════════════════════════════════
-       CONTACT
-    ═══════════════════════════════════════════ */
-    #contact { position: relative; z-index: 1; }
-    .contact-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 56px; align-items: start; }
-    .contact-info h3 {
-      font-family: var(--font-head);
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 14px;
-    }
-    .contact-info p { color: var(--text2); font-size: .95rem; margin-bottom: 32px; line-height: 1.8; }
-    .contact-items { display: flex; flex-direction: column; gap: 16px; }
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      padding: 16px 20px;
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      backdrop-filter: blur(8px);
-      transition: border-color .2s;
-    }
-    .contact-item:hover { border-color: var(--cyan); }
-    .contact-item-icon {
-      width: 40px; height: 40px;
-      border-radius: var(--radius-sm);
-      background: rgba(0,212,255,.1);
-      display: flex; align-items: center; justify-content: center;
-      color: var(--cyan);
-      font-size: .95rem;
-      flex-shrink: 0;
-    }
-    .contact-item-label { font-size: .75rem; color: var(--text3); display: block; }
-    .contact-item-val { font-size: .9rem; color: var(--text); font-weight: 500; }
-    .contact-form {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 40px;
-      backdrop-filter: blur(8px);
-    }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .form-group { display: flex; flex-direction: column; gap: 7px; margin-bottom: 20px; }
-    .form-group label { font-size: .82rem; font-weight: 600; color: var(--text2); }
-    .form-group input, .form-group textarea {
-      background: var(--bg3);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      padding: 13px 16px;
-      color: var(--text);
-      font-family: var(--font-body);
-      font-size: .9rem;
-      outline: none;
-      transition: border-color .2s;
-      resize: none;
-    }
-    .form-group input:focus, .form-group textarea:focus { border-color: var(--cyan); }
-    .form-group input::placeholder, .form-group textarea::placeholder { color: var(--text3); }
-    .form-submit { width: 100%; justify-content: center; font-size: 1rem; }
-    #form-status {
-      margin-top: 12px;
-      padding: 10px 16px;
-      border-radius: var(--radius-sm);
-      font-size: .875rem;
-      font-weight: 500;
-      display: none;
-    }
-    #form-status.success { background: rgba(16,185,129,.15); border: 1px solid rgba(16,185,129,.3); color: var(--green); display: block; }
-    #form-status.error   { background: rgba(239,68,68,.12);  border: 1px solid rgba(239,68,68,.3);  color: #f87171; display: block; }
+.contact-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 36px; }
+.item {
+  display: flex; gap: 12px; align-items: center; border: 1px solid var(--line); background: var(--card);
+  border-radius: 12px; padding: 12px; margin-bottom: 10px;
+}
+.item i { width: 38px; height: 38px; display: grid; place-items: center; background: var(--bg2); color: var(--ember); border-radius: 8px; }
+.item small { display: block; font-family: var(--mono); font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.item b { color: var(--ink); }
+form { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 28px; box-shadow: var(--shadow); }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+.field label { font-size: .8rem; font-weight: 700; color: var(--ink); }
+.field input, .field textarea {
+  background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 12px;
+  color: var(--ink); font-family: var(--body); outline: none;
+}
+.field input:focus, .field textarea:focus { border-color: var(--ember); }
+.full { width: 100%; justify-content: center; }
+#form-status { margin-top: 12px; padding: 10px; border-radius: 10px; display: none; font-size: .86rem; }
+#form-status.ok { display: block; background: rgba(47,158,99,.12); color: #1f7a4d; }
+#form-status.bad { display: block; background: rgba(228,69,26,.12); color: var(--ember); }
 
-    /* ═══════════════════════════════════════════
-       FOOTER
-    ═══════════════════════════════════════════ */
-    footer {
-      background: var(--bg2);
-      border-top: 1px solid var(--border);
-      padding: 40px 0;
-      position: relative;
-      z-index: 1;
-    }
-    .footer-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
-    .footer-logo {
-      font-family: var(--font-head);
-      font-size: 1.1rem;
-      font-weight: 800;
-      color: var(--text);
-    }
-    .footer-logo span { color: var(--cyan); }
-    .footer-copy { font-size: .82rem; color: var(--text3); }
-    .footer-socials { display: flex; gap: 14px; }
-    .footer-socials a {
-      width: 36px; height: 36px;
-      border-radius: 50%;
-      border: 1px solid var(--border);
-      display: flex; align-items: center; justify-content: center;
-      color: var(--text3);
-      font-size: .85rem;
-      transition: all .2s;
-    }
-    .footer-socials a:hover { border-color: var(--cyan); color: var(--cyan); }
+footer { border-top: 1px solid var(--line); padding: 28px 0 40px; position: relative; z-index: 1; }
+.foot { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: center; }
+.foot b { font-family: var(--display); color: var(--ink); }
+.foot span { color: var(--muted); font-size: .84rem; }
 
-    /* ═══════════════════════════════════════════
-       RESPONSIVE
-    ═══════════════════════════════════════════ */
-    @media (max-width: 900px) {
-      .about-grid    { grid-template-columns: 1fr; gap: 40px; }
-      .skills-grid   { grid-template-columns: 1fr 1fr; }
-      .contact-grid  { grid-template-columns: 1fr; }
-      .hero-stats    { display: none; }
-    }
-    @media (max-width: 700px) {
-      .projects-grid { grid-template-columns: 1fr; }
-      .edu-grid      { grid-template-columns: 1fr; }
-      .skills-grid   { grid-template-columns: 1fr; }
-      .form-row      { grid-template-columns: 1fr; }
-      .nav-links     { display: none; }
-      .hamburger     { display: flex; }
-    }
-    @media (max-width: 480px) {
-      .section { padding: 64px 0; }
-      .contact-form { padding: 24px 20px; }
-    }
-  </style>
+@media (max-width: 980px) {
+  .hero-grid, .about-grid, .contact-grid, .edu-grid { grid-template-columns: 1fr; }
+  .stat-row { grid-template-columns: 1fr 1fr; }
+  .hero-grid { text-align: center; }
+  .lead { margin-inline: auto; }
+  .ctas, .socials { justify-content: center; }
+  .shot { margin: 0 auto; }
+  .job { grid-template-columns: 1fr; }
+  .skills { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 740px) {
+  .links, .nav-right .btn { display: none; }
+  .burger { display: block; }
+  .proj-grid, .skills, .facts, .row { grid-template-columns: 1fr; }
+  .chip-1 { left: -8px; }
+  .chip-2 { right: -8px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+</style>
 </head>
 <body>
-
-  <!-- Blobs -->
-  <div class="blob-wrap" aria-hidden="true">
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
-    <div class="blob blob-3"></div>
+<nav id="navbar">
+  <div class="wrap nav-row">
+    <a href="#hero" class="logo">Tanvir<span>.</span></a>
+    <ul class="links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="theme-switch" role="group" aria-label="Switch black or white theme">
+        <button type="button" id="theme-white">White</button>
+        <button type="button" id="theme-black">Black</button>
+      </div>
+      <a class="btn btn-solid" href="./Tanvir_Ahmed_CV.pdf" download><i class="fa-solid fa-download"></i> Resume</a>
+      <button class="burger" id="burger" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+    </div>
   </div>
+</nav>
+<div class="mobile" id="mobile">
+  <a href="#about" onclick="closeMenu()">About</a>
+  <a href="#skills" onclick="closeMenu()">Skills</a>
+  <a href="#experience" onclick="closeMenu()">Experience</a>
+  <a href="#projects" onclick="closeMenu()">Projects</a>
+  <a href="#education" onclick="closeMenu()">Education</a>
+  <a href="#contact" onclick="closeMenu()">Contact</a>
+</div>
 
-  <!-- ══════════ NAV ══════════ -->
-  <nav id="navbar">
-    <div class="nav-inner">
-      <a href="#hero" class="nav-logo">Tanvir<span>.</span></a>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="./Tanvir_Ahmed_CV.pdf" download class="btn btn-primary nav-cta"><i class="fas fa-download"></i> Resume</a></li>
-      </ul>
-      <div class="hamburger" id="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
+<section id="hero">
+  <div class="wrap hero-grid">
+    <div data-aos="fade-up">
+      <div class="badge"><span class="dot"></span> Available for senior engineering roles</div>
+      <h1 class="display name">Tanvir <em>Ahmed</em></h1>
+      <p class="role">Senior Software Engineer - <b id="typewriter"></b><span class="cursor">|</span></p>
+      <p class="lead">10+ years designing and shipping enterprise-grade .NET applications, REST APIs, microservices, and CI/CD pipelines. Currently at Fiftytwo Digital Ltd., building Leasing Portals integrated with Business Central ERP.</p>
+      <div class="ctas">
+        <a class="btn btn-solid" href="./Tanvir_Ahmed_CV.pdf" download><i class="fa-solid fa-download"></i> Download Resume</a>
+        <a class="btn btn-line" href="#contact"><i class="fa-solid fa-envelope"></i> Get In Touch</a>
+      </div>
+      <div class="socials">
+        <a href="https://www.linkedin.com/in/tanvirahmedse" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="mailto:eyetanvir@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        <a href="tel:+8801795328376" aria-label="Phone"><i class="fa-solid fa-phone"></i></a>
+        <a href="https://github.com/eyetanvir-prog" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
       </div>
     </div>
-  </nav>
-
-  <!-- Mobile Menu -->
-  <div class="mobile-menu" id="mobile-menu">
-    <a href="#about"      onclick="closeMenu()">About</a>
-    <a href="#skills"     onclick="closeMenu()">Skills</a>
-    <a href="#experience" onclick="closeMenu()">Experience</a>
-    <a href="#projects"   onclick="closeMenu()">Projects</a>
-    <a href="#education"  onclick="closeMenu()">Education</a>
-    <a href="#contact"    onclick="closeMenu()">Contact</a>
-    <a href="./Tanvir_Ahmed_CV.pdf" download class="btn btn-primary" style="margin-top:8px"><i class="fas fa-download"></i> Download Resume</a>
+    <div class="shot" data-aos="fade-left">
+      <div class="ring"></div>
+      <img src="./profile.jpg" alt="Tanvir Ahmed" />
+      <div class="chip chip-1"><b>10+</b> Years experience</div>
+      <div class="chip chip-2"><b>6+</b> Major systems shipped</div>
+    </div>
   </div>
+</section>
 
-  <!-- ══════════ HERO ══════════ -->
-  <section id="hero">
-    <div class="container" style="position:relative;z-index:1">
-      <div class="hero-inner">
-      <div class="hero-content">
-        <div class="hero-badge">
-          <span></span>
-          Available for Senior Engineering Roles
-        </div>
-        <h1 class="hero-name">Tanvir<br><span class="accent">Ahmed</span></h1>
-        <p class="hero-title">
-          Senior Software Engineer &mdash; <span class="typewriter" id="typewriter"></span><span class="cursor-blink">|</span>
-        </p>
-        <p class="hero-desc">
-          10+ years designing and shipping enterprise-grade .NET applications, REST APIs, microservices, and CI/CD pipelines. Currently at Fiftytwo Digital Ltd., building Leasing Portals integrated with Business Central ERP.
-        </p>
-        <div class="hero-ctas">
-          <a href="./Tanvir_Ahmed_CV.pdf" download class="btn btn-primary"><i class="fas fa-download"></i> Download Resume</a>
-          <a href="#contact" class="btn btn-outline"><i class="fas fa-envelope"></i> Get In Touch</a>
-        </div>
-        <div class="hero-socials">
-          <a href="https://www.linkedin.com/in/tanvirahmedse" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="mailto:eyetanvir@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-          <a href="tel:+8801795328376" aria-label="Phone"><i class="fas fa-phone"></i></a>
-          <a href="https://github.com/eyetanvir-prog" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
-        </div>
-      </div>
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>C#</span><span>.NET 10</span><span>ASP.NET Core</span><span>Web API</span><span>SQL Server</span><span>Docker</span><span>Jenkins</span><span>Microservices</span><span>xUnit</span>
+    <span>C#</span><span>.NET 10</span><span>ASP.NET Core</span><span>Web API</span><span>SQL Server</span><span>Docker</span><span>Jenkins</span><span>Microservices</span><span>xUnit</span>
+  </div>
+</div>
 
-      </div><!-- /hero-content -->
-
-      <!-- Profile Photo -->
-      <div class="hero-photo-wrap">
-        <div class="hero-photo-glow"></div>
-        <div class="hero-photo-ring">
-          <div class="hero-photo-inner">
-            <img src="./profile.jpg" alt="Tanvir Ahmed — Senior Software Engineer" />
-          </div>
-        </div>
-        <div class="hero-photo-badge">
-          <i class="fas fa-briefcase"></i> 10+ Years Experience
-        </div>
-      </div>
-
-      </div><!-- /hero-inner -->
-
-      <!-- Floating stats -->
-      <div class="hero-stats">
-        <div class="hero-stat">
-          <span class="num">10+</span>
-          <span class="lbl">Years Experience</span>
-        </div>
-        <div class="hero-stat">
-          <span class="num">6+</span>
-          <span class="lbl">Companies</span>
-        </div>
-        <div class="hero-stat">
-          <span class="num">6+</span>
-          <span class="lbl">Major Projects</span>
-        </div>
-      </div>
-
-      <!-- Scroll hint -->
-      <div class="scroll-hint">
-        <div class="wheel"><div class="dot"></div></div>
-        <span>Scroll</span>
+<section id="about" class="section">
+  <div class="wrap">
+  <div class="about-grid">
+    <div class="about-photo" data-aos="fade-right">
+      <img src="./about.png" alt="Tanvir Ahmed" />
+    </div>
+    <div data-aos="fade-left">
+      <div class="kicker">About Me</div>
+      <h2 class="display title">Building systems that scale and last.</h2>
+      <p>Having experience working on national and international companies - currently working at an international company.</p>
+      <p>I am a Senior Software Engineer based in Dhaka, Bangladesh, with over a decade of experience delivering enterprise applications, backend services, and API integrations using the .NET ecosystem.</p>
+      <p>My work spans <strong>banking systems at BRAC Bank</strong>, international SaaS products at Fiftytwo Digital, and multiple enterprise platforms. I take pride in clean architecture, maintainable code, and end-to-end delivery ownership.</p>
+      <p>I hold a <strong>BSc in Computer Science</strong> from the University of East London and an <strong>MBA</strong> from Cardiff Metropolitan University - a combination that helps me bridge technical depth with business understanding.</p>
+      <div class="facts">
+        <div><i class="fa-solid fa-location-dot"></i> Dhaka, Bangladesh</div>
+        <div><i class="fa-solid fa-language"></i> English (IELTS 8/9 · PTE 84/90)</div>
+        <div><i class="fa-solid fa-graduation-cap"></i> MBA + BSc Computer Science (UK)</div>
+        <div><i class="fa-solid fa-layer-group"></i> Agile / Scrum practitioner</div>
       </div>
     </div>
-  </section>
-
-  <!-- ══════════ ABOUT ══════════ -->
-  <section id="about" class="section">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-text" data-aos="fade-right">
-          <div style="display:flex;align-items:center;gap:18px;margin-bottom:24px;">
-            <img src="./profile.jpg" alt="Tanvir Ahmed" style="width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:center top;border:2px solid var(--cyan);" />
-            <div>
-              <div style="font-family:var(--font-head);font-weight:700;font-size:1.05rem;color:var(--text)">Tanvir Ahmed</div>
-              <div style="font-size:.82rem;color:var(--cyan)">Senior Software Engineer</div>
-            </div>
-          </div>
-          <p class="section-label">About Me</p>
-          <h2 class="section-title">Building systems<br>that scale & last</h2>
-          <p style="background:rgba(0,212,255,.07);border-left:3px solid var(--cyan);padding:12px 16px;border-radius:0 var(--radius-sm) var(--radius-sm) 0;color:var(--text);font-weight:500;">Having experience working on national and international companies — currently working at an international company.</p>
-          <p>I'm a <strong>Senior Software Engineer</strong> based in Dhaka, Bangladesh, with over a decade of experience delivering enterprise applications, backend services, and API integrations using the .NET ecosystem.</p>
-          <p>My work spans <strong>banking systems at BRAC Bank</strong>, international SaaS products at Fiftytwo Digital, and multiple enterprise platforms. I take pride in clean architecture, maintainable code, and end-to-end delivery ownership.</p>
-          <p>I hold a <strong>BSc in Computer Science</strong> from the University of East London and an <strong>MBA</strong> from Cardiff Metropolitan University — a combination that helps me bridge technical depth with business understanding.</p>
-          <div class="about-highlights">
-            <div class="about-highlight"><i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh</div>
-            <div class="about-highlight"><i class="fas fa-language"></i> English (IELTS 8/9 · PTE 84/90)</div>
-            <div class="about-highlight"><i class="fas fa-graduation-cap"></i> MBA + BSc Computer Science (UK)</div>
-            <div class="about-highlight"><i class="fas fa-users"></i> Agile / Scrum practitioner</div>
-          </div>
-        </div>
-        <div class="about-stats" data-aos="fade-left">
-          <div class="about-stat">
-            <span class="num">10+</span>
-            <span class="lbl">Years in .NET Development</span>
-          </div>
-          <div class="about-stat">
-            <span class="num">6</span>
-            <span class="lbl">Companies Contributed To</span>
-          </div>
-          <div class="about-stat">
-            <span class="num">2</span>
-            <span class="lbl">UK University Degrees</span>
-          </div>
-          <div class="about-stat">
-            <span class="num">8/9</span>
-            <span class="lbl">IELTS English Score</span>
-          </div>
-        </div>
-      </div>
+  </div>
+    <div class="stat-row">
+      <div class="stat"><b>10+</b><span>Years in .NET development</span></div>
+      <div class="stat"><b>6</b><span>Companies contributed to</span></div>
+      <div class="stat"><b>2</b><span>UK university degrees</span></div>
+      <div class="stat"><b>8/9</b><span>IELTS English score</span></div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ══════════ SKILLS ══════════ -->
-  <section id="skills" class="section">
-    <div class="container">
-      <p class="section-label" data-aos="fade-up">Technical Skills</p>
-      <h2 class="section-title" data-aos="fade-up" data-aos-delay="50">My Core Stack</h2>
-      <p class="section-sub" data-aos="fade-up" data-aos-delay="100">A decade of hands-on experience across the full backend engineering spectrum — from language-level to infrastructure.</p>
-      <div class="skills-grid">
-
-        <div class="skill-group" data-aos="fade-up" data-aos-delay="0">
-          <div class="skill-group-title"><i class="fas fa-code"></i> Languages & Frameworks</div>
-          <div class="skill-tags">
-            <span class="tag">C#</span>
-            <span class="tag">.NET / .NET Core</span>
-            <span class="tag">ASP.NET Core</span>
-            <span class="tag">Web API</span>
-            <span class="tag">ASP.NET MVC</span>
-            <span class="tag">Web Forms</span>
-            <span class="tag">.NET Framework</span>
-          </div>
-        </div>
-
-        <div class="skill-group" data-aos="fade-up" data-aos-delay="80">
-          <div class="skill-group-title"><i class="fas fa-database"></i> Databases & ORM</div>
-          <div class="skill-tags">
-            <span class="tag">SQL Server</span>
-            <span class="tag">Oracle</span>
-            <span class="tag">MySQL</span>
-            <span class="tag">T-SQL</span>
-            <span class="tag">Entity Framework Core</span>
-            <span class="tag">Dapper</span>
-            <span class="tag">ADO.NET</span>
-            <span class="tag">LINQ</span>
-          </div>
-        </div>
-
-        <div class="skill-group" data-aos="fade-up" data-aos-delay="160">
-          <div class="skill-group-title"><i class="fas fa-rocket"></i> DevOps & CI/CD</div>
-          <div class="skill-tags">
-            <span class="tag">Docker</span>
-            <span class="tag">Docker Compose</span>
-            <span class="tag">Jenkins</span>
-            <span class="tag">Bitbucket Pipelines</span>
-            <span class="tag">Git</span>
-            <span class="tag">SVN</span>
-            <span class="tag">TFS</span>
-            <span class="tag">IIS</span>
-          </div>
-        </div>
-
-        <div class="skill-group" data-aos="fade-up" data-aos-delay="0">
-          <div class="skill-group-title"><i class="fas fa-laptop-code"></i> Front-End</div>
-          <div class="skill-tags">
-            <span class="tag">JavaScript</span>
-            <span class="tag">Angular</span>
-            <span class="tag">AngularJS</span>
-            <span class="tag">jQuery</span>
-            <span class="tag">AJAX</span>
-            <span class="tag">HTML5</span>
-            <span class="tag">CSS3</span>
-            <span class="tag">Bootstrap</span>
-          </div>
-        </div>
-
-        <div class="skill-group" data-aos="fade-up" data-aos-delay="80">
-          <div class="skill-group-title"><i class="fas fa-vial"></i> Testing & Quality</div>
-          <div class="skill-tags">
-            <span class="tag">xUnit</span>
-            <span class="tag">Unit Testing</span>
-            <span class="tag">Coverlet</span>
-            <span class="tag">ReportGenerator</span>
-            <span class="tag">Code Reviews</span>
-            <span class="tag">SOLID Principles</span>
-            <span class="tag">Design Patterns</span>
-          </div>
-        </div>
-
-        <div class="skill-group" data-aos="fade-up" data-aos-delay="160">
-          <div class="skill-group-title"><i class="fas fa-sitemap"></i> Architecture & Process</div>
-          <div class="skill-tags">
-            <span class="tag">REST APIs</span>
-            <span class="tag">Microservices</span>
-            <span class="tag">Repository Pattern</span>
-            <span class="tag">Unit of Work</span>
-            <span class="tag">Middleware</span>
-            <span class="tag">System Integration</span>
-            <span class="tag">Agile / Scrum</span>
-          </div>
-        </div>
-
-      </div>
+<section id="skills" class="section" style="background: var(--bg2);">
+  <div class="wrap">
+    <div data-aos="fade-up">
+      <div class="kicker">Technical Skills</div>
+      <h2 class="display title">My core stack</h2>
+      <p class="sub">A decade of hands-on experience across the full backend engineering spectrum - from language-level to infrastructure.</p>
     </div>
-  </section>
-
-  <!-- ══════════ EXPERIENCE ══════════ -->
-  <section id="experience" class="section">
-    <div class="container">
-      <p class="section-label" data-aos="fade-up">Career</p>
-      <h2 class="section-title" data-aos="fade-up" data-aos-delay="50">Work Experience</h2>
-      <p class="section-sub" data-aos="fade-up" data-aos-delay="100">From web development to enterprise banking systems and international SaaS platforms — a decade of progressive growth.</p>
-      <div class="timeline">
-
-        <div class="tl-item" data-aos="fade-up">
-          <div class="tl-dot"></div>
-          <div class="tl-card">
-            <div class="tl-header">
-              <span class="tl-role">Senior Software Engineer</span>
-              <span class="tl-period">Sept 2024 — Present</span>
-            </div>
-            <div class="tl-company">Fiftytwo Digital Ltd. <span class="tl-location">· Dhaka, Bangladesh</span></div>
-            <ul class="tl-bullets">
-              <li>Lead design and development of backend solutions using .NET 10, integrated with Business Central ERP.</li>
-              <li>Own the full SDLC for a Leasing Portal — from technical design and development to testing, Docker deployment, and support.</li>
-              <li>Configure multi-branch CI/CD pipelines with Jenkins and Bitbucket; automate build, test, and deployment to IIS.</li>
-              <li>Implement automated unit testing with xUnit and maintain code coverage with Coverlet and ReportGenerator.</li>
-              <li>Mentor engineers through code reviews, design discussions, and engineering best practices.</li>
-              <li>Architect clean backend systems using SOLID principles, Repository Pattern, and Unit of Work.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="tl-item" data-aos="fade-up" data-aos-delay="60">
-          <div class="tl-dot"></div>
-          <div class="tl-card">
-            <div class="tl-header">
-              <span class="tl-role">Associate Manager, Application Development</span>
-              <span class="tl-period">Oct 2021 — Aug 2024</span>
-            </div>
-            <div class="tl-company">BRAC Bank PLC <span class="tl-location">· Tejgaon, Dhaka</span></div>
-            <ul class="tl-bullets">
-              <li>Led architecture and end-to-end delivery of scalable, secure enterprise applications for critical banking operations.</li>
-              <li>Designed backend services and integration layers using .NET Core and Web API to improve reliability and scalability.</li>
-              <li>Built centralized middleware and service integration components to streamline cross-system communication.</li>
-              <li>Optimized T-SQL queries and maintained data integrity across SQL Server and Oracle environments.</li>
-              <li>Integrated third-party services and developed middleware for seamless API communication across multiple platforms.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="tl-item" data-aos="fade-up" data-aos-delay="60">
-          <div class="tl-dot"></div>
-          <div class="tl-card">
-            <div class="tl-header">
-              <span class="tl-role">Senior Software Engineer</span>
-              <span class="tl-period">May 2018 — Aug 2021</span>
-            </div>
-            <div class="tl-company">Mediasoft Data Systems Ltd. <span class="tl-location">· Dhaka</span></div>
-            <ul class="tl-bullets">
-              <li>Designed, developed, and maintained APIs for web and mobile applications.</li>
-              <li>Developed front-end components using Angular for business application workflows.</li>
-              <li>Designed and optimized databases using SQL Server and MySQL with stored procedures.</li>
-              <li>Conducted code reviews and implemented enhancements to improve API functionality and maintainability.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="tl-item" data-aos="fade-up" data-aos-delay="60">
-          <div class="tl-dot"></div>
-          <div class="tl-card">
-            <div class="tl-header">
-              <span class="tl-role">Software Developer</span>
-              <span class="tl-period">May 2016 — Nov 2017</span>
-            </div>
-            <div class="tl-company">Next IT Ltd. <span class="tl-location">· Banani, Dhaka</span></div>
-            <ul class="tl-bullets">
-              <li>Developed modules using AngularJS, REST APIs, .NET Framework, and SQL Server / Oracle / MySQL.</li>
-              <li>Maintained and extended scalable .NET and AngularJS applications for in-house products.</li>
-              <li>Built responsive UIs and improved user experience across multiple client-facing applications.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="tl-item" data-aos="fade-up" data-aos-delay="60">
-          <div class="tl-dot"></div>
-          <div class="tl-card">
-            <div class="tl-header">
-              <span class="tl-role">Web Developer</span>
-              <span class="tl-period">Sept 2014 — Apr 2016</span>
-            </div>
-            <div class="tl-company">Nogor Solutions Ltd. <span class="tl-location">· Niketon, Dhaka</span></div>
-            <ul class="tl-bullets">
-              <li>Designed responsive website layouts and UIs using HTML5, CSS3, and JavaScript.</li>
-              <li>Created and optimized database schemas and SQL queries for efficient data storage and retrieval.</li>
-              <li>Authored technical documentation for code, processes, and procedures.</li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
+    <div class="skills">
+      <article class="skill" data-aos="fade-up"><small>01 / LANGUAGE</small><h3>Languages &amp; Frameworks</h3><div class="tags"><span class="tag">C#</span><span class="tag">.NET / .NET Core</span><span class="tag">ASP.NET Core</span><span class="tag">Web API</span><span class="tag">ASP.NET MVC</span><span class="tag">Web Forms</span><span class="tag">.NET Framework</span></div></article>
+      <article class="skill" data-aos="fade-up" data-aos-delay="60"><small>02 / DATA</small><h3>Databases &amp; ORM</h3><div class="tags"><span class="tag">SQL Server</span><span class="tag">Oracle</span><span class="tag">MySQL</span><span class="tag">T-SQL</span><span class="tag">Entity Framework Core</span><span class="tag">Dapper</span><span class="tag">ADO.NET</span><span class="tag">LINQ</span></div></article>
+      <article class="skill" data-aos="fade-up" data-aos-delay="120"><small>03 / SHIP</small><h3>DevOps &amp; CI/CD</h3><div class="tags"><span class="tag">Docker</span><span class="tag">Docker Compose</span><span class="tag">Jenkins</span><span class="tag">Bitbucket Pipelines</span><span class="tag">Git</span><span class="tag">SVN</span><span class="tag">TFS</span><span class="tag">IIS</span></div></article>
+      <article class="skill" data-aos="fade-up"><small>04 / UI</small><h3>Front-End</h3><div class="tags"><span class="tag">JavaScript</span><span class="tag">Angular</span><span class="tag">AngularJS</span><span class="tag">jQuery</span><span class="tag">AJAX</span><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">Bootstrap</span></div></article>
+      <article class="skill" data-aos="fade-up" data-aos-delay="60"><small>05 / QUALITY</small><h3>Testing &amp; Quality</h3><div class="tags"><span class="tag">xUnit</span><span class="tag">Unit Testing</span><span class="tag">Coverlet</span><span class="tag">ReportGenerator</span><span class="tag">Code Reviews</span><span class="tag">SOLID Principles</span><span class="tag">Design Patterns</span></div></article>
+      <article class="skill" data-aos="fade-up" data-aos-delay="120"><small>06 / ARCH</small><h3>Architecture &amp; Process</h3><div class="tags"><span class="tag">REST APIs</span><span class="tag">Microservices</span><span class="tag">Repository Pattern</span><span class="tag">Unit of Work</span><span class="tag">Middleware</span><span class="tag">System Integration</span><span class="tag">Agile / Scrum</span></div></article>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ══════════ PROJECTS ══════════ -->
-  <section id="projects" class="section">
-    <div class="container">
-      <p class="section-label" data-aos="fade-up">Work</p>
-      <h2 class="section-title" data-aos="fade-up" data-aos-delay="50">Selected Projects</h2>
-      <p class="section-sub" data-aos="fade-up" data-aos-delay="100">Enterprise systems built for scale, security, and long-term maintainability.</p>
-      <div class="projects-grid">
-
-        <div class="project-card" data-aos="fade-up" data-aos-delay="0">
-          <div class="project-header">
-            <div class="project-icon"><i class="fas fa-file-invoice-dollar"></i></div>
-            <span class="project-num">01</span>
-          </div>
-          <div class="project-title">Leasing Portal Application</div>
-          <p class="project-desc">Full-cycle development of a Leasing Portal integrated with Business Central ERP. Features real-time lease status tracking, automated workflows, dynamic reporting, and role-based dashboards. Multi-branch CI/CD via Jenkins and Bitbucket.</p>
-          <div class="project-tags">
-            <span class="project-tag">.NET 10</span>
-            <span class="project-tag">EF Core 10</span>
-            <span class="project-tag">Docker</span>
-            <span class="project-tag">xUnit</span>
-            <span class="project-tag">Jenkins</span>
-            <span class="project-tag">SQL Server</span>
-            <span class="project-tag">Business Central</span>
-          </div>
-        </div>
-
-        <div class="project-card" data-aos="fade-up" data-aos-delay="80">
-          <div class="project-header">
-            <div class="project-icon"><i class="fas fa-credit-card"></i></div>
-            <span class="project-num">02</span>
-          </div>
-          <div class="project-title">Card Express — Lounge Key Automation</div>
-          <p class="project-desc">Replaced manual Lounge Key transaction posting with a fully automated solution. Built MidExpress middleware for API communication, Lounge Pay for background processing, bulk Excel upload with validations, and JWT-secured authentication.</p>
-          <div class="project-tags">
-            <span class="project-tag">ASP.NET Core MVC</span>
-            <span class="project-tag">Web API</span>
-            <span class="project-tag">ADO.NET</span>
-            <span class="project-tag">SQL Server</span>
-            <span class="project-tag">Oracle</span>
-            <span class="project-tag">QuestPDF</span>
-            <span class="project-tag">JWT</span>
-          </div>
-        </div>
-
-        <div class="project-card" data-aos="fade-up" data-aos-delay="0">
-          <div class="project-header">
-            <div class="project-icon"><i class="fas fa-sync-alt"></i></div>
-            <span class="project-num">03</span>
-          </div>
-          <div class="project-title">Card Cheque — Legacy Modernization</div>
-          <p class="project-desc">Modernized a legacy credit card cheque processing application covering issuance, approvals, activation, payments, and reporting. Implemented SSO, centralized user management, and middleware APIs for fund transfer, fee posting, and transaction logging.</p>
-          <div class="project-tags">
-            <span class="project-tag">ASP.NET Core MVC</span>
-            <span class="project-tag">Web API</span>
-            <span class="project-tag">SQL Server</span>
-            <span class="project-tag">Oracle</span>
-            <span class="project-tag">SSO</span>
-            <span class="project-tag">JWT</span>
-            <span class="project-tag">QuestPDF</span>
-          </div>
-        </div>
-
-        <div class="project-card" data-aos="fade-up" data-aos-delay="80">
-          <div class="project-header">
-            <div class="project-icon"><i class="fas fa-tasks"></i></div>
-            <span class="project-num">04</span>
-          </div>
-          <div class="project-title">Workflow Management System</div>
-          <p class="project-desc">Built a workflow platform to manage change requests, development tasks, and issue tracking with structured approvals across business, product, delivery, development, and QA stakeholders. Role-based dashboards, notifications, and real-time status tracking.</p>
-          <div class="project-tags">
-            <span class="project-tag">ASP.NET Core MVC</span>
-            <span class="project-tag">Web API</span>
-            <span class="project-tag">ADO.NET</span>
-            <span class="project-tag">SQL Server</span>
-            <span class="project-tag">Chart.js</span>
-            <span class="project-tag">JWT</span>
-          </div>
-        </div>
-
-        <div class="project-card" data-aos="fade-up" data-aos-delay="0">
-          <div class="project-header">
-            <div class="project-icon"><i class="fas fa-map-marked-alt"></i></div>
-            <span class="project-num">05</span>
-          </div>
-          <div class="project-title">Contact Point Verification</div>
-          <p class="project-desc">Loan processing verification module integrating third-party geolocation and address verification services. Supports real-time decision-making with mobile-captured location data and photographic evidence. Includes dashboards, reporting, and validation checks.</p>
-          <div class="project-tags">
-            <span class="project-tag">ASP.NET Web Forms</span>
-            <span class="project-tag">ASP.NET Core Web API</span>
-            <span class="project-tag">Geolocation API</span>
-            <span class="project-tag">ADO.NET</span>
-            <span class="project-tag">SQL Server</span>
-            <span class="project-tag">JWT</span>
-          </div>
-        </div>
-
-        <div class="project-card" data-aos="fade-up" data-aos-delay="80">
-          <div class="project-header">
-            <div class="project-icon"><i class="fas fa-gas-pump"></i></div>
-            <span class="project-num">06</span>
-          </div>
-          <div class="project-title">SMA Backend API — German Gas Company</div>
-          <p class="project-desc">Developed backend APIs to support core business operations and secure system integrations for a German gas company. Focused on scalability, security, performance, and data integrity using clean architecture principles and unit testing.</p>
-          <div class="project-tags">
-            <span class="project-tag">ASP.NET Core Web API</span>
-            <span class="project-tag">Entity Framework</span>
-            <span class="project-tag">SQL Server</span>
-            <span class="project-tag">JWT</span>
-            <span class="project-tag">Clean Architecture</span>
-          </div>
-        </div>
-
-      </div>
+<section id="experience" class="section">
+  <div class="wrap">
+    <div data-aos="fade-up">
+      <div class="kicker">Career</div>
+      <h2 class="display title">Work experience</h2>
+      <p class="sub">From web development to enterprise banking systems and international SaaS platforms - a decade of progressive growth.</p>
     </div>
-  </section>
+    <article class="job" data-aos="fade-up"><div class="job-year">2024<small>SEP 2024 - PRESENT</small></div><div><h3>Senior Software Engineer</h3><h4>Fiftytwo Digital Ltd. · Dhaka, Bangladesh</h4><ul><li>Lead design and development of backend solutions using .NET 10, integrated with Business Central ERP.</li><li>Own the full SDLC for a Leasing Portal - from technical design and development to testing, Docker deployment, and support.</li><li>Configure multi-branch CI/CD pipelines with Jenkins and Bitbucket; automate build, test, and deployment to IIS.</li><li>Implement automated unit testing with xUnit and maintain code coverage with Coverlet and ReportGenerator.</li><li>Mentor engineers through code reviews, design discussions, and engineering best practices.</li><li>Architect clean backend systems using SOLID principles, Repository Pattern, and Unit of Work.</li></ul></div></article>
+    <article class="job" data-aos="fade-up"><div class="job-year">2021<small>OCT 2021 - AUG 2024</small></div><div><h3>Associate Manager, Application Development</h3><h4>BRAC Bank PLC · Tejgaon, Dhaka</h4><ul><li>Led architecture and end-to-end delivery of scalable, secure enterprise applications for critical banking operations.</li><li>Designed backend services and integration layers using .NET Core and Web API to improve reliability and scalability.</li><li>Built centralized middleware and service integration components to streamline cross-system communication.</li><li>Optimized T-SQL queries and maintained data integrity across SQL Server and Oracle environments.</li><li>Integrated third-party services and developed middleware for seamless API communication across multiple platforms.</li></ul></div></article>
+    <article class="job" data-aos="fade-up"><div class="job-year">2018<small>MAY 2018 - AUG 2021</small></div><div><h3>Senior Software Engineer</h3><h4>Mediasoft Data Systems Ltd. · Dhaka</h4><ul><li>Designed, developed, and maintained APIs for web and mobile applications.</li><li>Developed front-end components using Angular for business application workflows.</li><li>Designed and optimized databases using SQL Server and MySQL with stored procedures.</li><li>Conducted code reviews and implemented enhancements to improve API functionality and maintainability.</li></ul></div></article>
+    <article class="job" data-aos="fade-up"><div class="job-year">2016<small>MAY 2016 - NOV 2017</small></div><div><h3>Software Developer</h3><h4>Next IT Ltd. · Banani, Dhaka</h4><ul><li>Developed modules using AngularJS, REST APIs, .NET Framework, and SQL Server / Oracle / MySQL.</li><li>Maintained and extended scalable .NET and AngularJS applications for in-house products.</li><li>Built responsive UIs and improved user experience across multiple client-facing applications.</li></ul></div></article>
+    <article class="job" data-aos="fade-up"><div class="job-year">2014<small>SEP 2014 - APR 2016</small></div><div><h3>Web Developer</h3><h4>Nogor Solutions Ltd. · Niketon, Dhaka</h4><ul><li>Designed responsive website layouts and UIs using HTML5, CSS3, and JavaScript.</li><li>Created and optimized database schemas and SQL queries for efficient data storage and retrieval.</li><li>Authored technical documentation for code, processes, and procedures.</li></ul></div></article>
+  </div>
+</section>
 
-  <!-- ══════════ EDUCATION ══════════ -->
-  <section id="education" class="section">
-    <div class="container">
-      <p class="section-label" data-aos="fade-up">Academic Background</p>
-      <h2 class="section-title" data-aos="fade-up" data-aos-delay="50">Education</h2>
-      <p class="section-sub" data-aos="fade-up" data-aos-delay="100">UK-educated with a combination of technical and business qualifications.</p>
-      <div class="edu-grid">
-
-        <div class="edu-card" data-aos="fade-up" data-aos-delay="0">
-          <div class="edu-icon"><i class="fas fa-university"></i></div>
-          <div>
-            <div class="edu-degree">Master of Business Administration</div>
-            <div class="edu-school">Cardiff Metropolitan University</div>
-            <div class="edu-meta"><i class="fas fa-map-marker-alt" style="margin-right:4px"></i>Wales, United Kingdom &nbsp;·&nbsp; 2013 &nbsp;·&nbsp; Major: International Business</div>
-          </div>
-        </div>
-
-        <div class="edu-card" data-aos="fade-up" data-aos-delay="80">
-          <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
-          <div>
-            <div class="edu-degree">BSc (Hons) Computer Science</div>
-            <div class="edu-school">University of East London</div>
-            <div class="edu-meta"><i class="fas fa-map-marker-alt" style="margin-right:4px"></i>England, United Kingdom &nbsp;·&nbsp; 2012</div>
-          </div>
-        </div>
-
-        <div class="edu-card" data-aos="fade-up" data-aos-delay="0">
-          <div class="edu-icon"><i class="fas fa-scroll"></i></div>
-          <div>
-            <div class="edu-degree">GCE A-Level</div>
-            <div class="edu-school">British Council</div>
-            <div class="edu-meta"><i class="fas fa-map-marker-alt" style="margin-right:4px"></i>Dhaka, Bangladesh &nbsp;·&nbsp; 2009</div>
-          </div>
-        </div>
-
-        <div class="edu-card" data-aos="fade-up" data-aos-delay="80">
-          <div class="edu-icon"><i class="fas fa-certificate"></i></div>
-          <div>
-            <div class="edu-degree">GCSE O-Level</div>
-            <div class="edu-school">British Council</div>
-            <div class="edu-meta"><i class="fas fa-map-marker-alt" style="margin-right:4px"></i>Dhaka, Bangladesh &nbsp;·&nbsp; 2006</div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Language box -->
-      <div style="margin-top:32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;">
-        <div class="about-stat" data-aos="fade-up">
-          <span class="num" style="font-size:1.6rem">IELTS 8/9</span>
-          <span class="lbl">English — General</span>
-        </div>
-        <div class="about-stat" data-aos="fade-up" data-aos-delay="60">
-          <span class="num" style="font-size:1.6rem">PTE 84/90</span>
-          <span class="lbl">English — Academic</span>
-        </div>
-        <div class="about-stat" data-aos="fade-up" data-aos-delay="120">
-          <span class="num" style="font-size:1.6rem">Native</span>
-          <span class="lbl">Bengali</span>
-        </div>
-      </div>
+<section id="projects" class="section" style="background: var(--bg2);">
+  <div class="wrap">
+    <div data-aos="fade-up">
+      <div class="kicker">Work</div>
+      <h2 class="display title">Selected projects</h2>
+      <p class="sub">Enterprise systems built for scale, security, and long-term maintainability.</p>
     </div>
-  </section>
-
-  <!-- ══════════ CONTACT ══════════ -->
-  <section id="contact" class="section">
-    <div class="container">
-      <p class="section-label" data-aos="fade-up">Let's Talk</p>
-      <h2 class="section-title" data-aos="fade-up" data-aos-delay="50">Get In Touch</h2>
-      <p class="section-sub" data-aos="fade-up" data-aos-delay="100">Open to senior engineering roles, consulting, and interesting collaborations.</p>
-      <div class="contact-grid">
-
-        <div class="contact-info" data-aos="fade-right">
-          <h3>Happy to connect</h3>
-          <p>Whether you have a role in mind, a project to discuss, or just want to say hello — drop me a message and I'll get back to you promptly.</p>
-          <div class="contact-items">
-            <div class="contact-item">
-              <div class="contact-item-icon"><i class="fas fa-envelope"></i></div>
-              <div>
-                <span class="contact-item-label">Email</span>
-                <a href="mailto:eyetanvir@gmail.com" class="contact-item-val">eyetanvir@gmail.com</a>
-              </div>
-            </div>
-            <div class="contact-item">
-              <div class="contact-item-icon"><i class="fas fa-phone"></i></div>
-              <div>
-                <span class="contact-item-label">Phone / WhatsApp</span>
-                <a href="tel:+8801795328376" class="contact-item-val">+880 1795 328376</a>
-              </div>
-            </div>
-            <div class="contact-item">
-              <div class="contact-item-icon"><i class="fab fa-linkedin-in"></i></div>
-              <div>
-                <span class="contact-item-label">LinkedIn</span>
-                <a href="https://www.linkedin.com/in/tanvirahmedse" target="_blank" rel="noopener" class="contact-item-val">linkedin.com/in/tanvirahmedse</a>
-              </div>
-            </div>
-            <div class="contact-item">
-              <div class="contact-item-icon"><i class="fas fa-map-marker-alt"></i></div>
-              <div>
-                <span class="contact-item-label">Location</span>
-                <span class="contact-item-val">Dhaka, Bangladesh</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="contact-form" data-aos="fade-left">
-          <!-- Replace YOUR_FORM_ID with your Formspree form ID from formspree.io -->
-          <form id="contact-form" action="https://formspree.io/f/xaqalvob" method="POST">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="fname">First Name</label>
-                <input type="text" id="fname" name="first_name" placeholder="John" required />
-              </div>
-              <div class="form-group">
-                <label for="lname">Last Name</label>
-                <input type="text" id="lname" name="last_name" placeholder="Doe" required />
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="email">Email Address</label>
-              <input type="email" id="email" name="email" placeholder="john@company.com" required />
-            </div>
-            <div class="form-group">
-              <label for="subject">Subject</label>
-              <input type="text" id="subject" name="subject" placeholder="Job opportunity / Collaboration / Hello" />
-            </div>
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" rows="5" placeholder="Tell me about the opportunity or what you have in mind..." required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary form-submit">
-              <i class="fas fa-paper-plane"></i> Send Message
-            </button>
-            <div id="form-status"></div>
-          </form>
-        </div>
-
-      </div>
+    <div class="proj-grid">
+      <article class="proj" data-aos="fade-up"><div class="proj-no">01</div><h3>Leasing Portal Application</h3><p>Full-cycle development of a Leasing Portal integrated with Business Central ERP. Features real-time lease status tracking, automated workflows, dynamic reporting, and role-based dashboards. Multi-branch CI/CD via Jenkins and Bitbucket.</p><div class="metrics"><span class="tag">.NET 10</span><span class="tag">EF Core 10</span><span class="tag">Docker</span><span class="tag">xUnit</span><span class="tag">Jenkins</span><span class="tag">SQL Server</span><span class="tag">Business Central</span></div></article>
+      <article class="proj" data-aos="fade-up" data-aos-delay="60"><div class="proj-no">02</div><h3>Card Express - Lounge Key Automation</h3><p>Replaced manual Lounge Key transaction posting with a fully automated solution. Built MidExpress middleware for API communication, Lounge Pay for background processing, bulk Excel upload with validations, and JWT-secured authentication.</p><div class="metrics"><span class="tag">ASP.NET Core MVC</span><span class="tag">Web API</span><span class="tag">ADO.NET</span><span class="tag">SQL Server</span><span class="tag">Oracle</span><span class="tag">QuestPDF</span><span class="tag">JWT</span></div></article>
+      <article class="proj" data-aos="fade-up"><div class="proj-no">03</div><h3>Card Cheque - Legacy Modernization</h3><p>Modernized a legacy credit card cheque processing application covering issuance, approvals, activation, payments, and reporting. Implemented SSO, centralized user management, and middleware APIs for fund transfer, fee posting, and transaction logging.</p><div class="metrics"><span class="tag">ASP.NET Core MVC</span><span class="tag">Web API</span><span class="tag">SQL Server</span><span class="tag">Oracle</span><span class="tag">SSO</span><span class="tag">JWT</span><span class="tag">QuestPDF</span></div></article>
+      <article class="proj" data-aos="fade-up" data-aos-delay="60"><div class="proj-no">04</div><h3>Workflow Management System</h3><p>Built a workflow platform to manage change requests, development tasks, and issue tracking with structured approvals across business, product, delivery, development, and QA stakeholders. Role-based dashboards, notifications, and real-time status tracking.</p><div class="metrics"><span class="tag">ASP.NET Core MVC</span><span class="tag">Web API</span><span class="tag">ADO.NET</span><span class="tag">SQL Server</span><span class="tag">Chart.js</span><span class="tag">JWT</span></div></article>
+      <article class="proj" data-aos="fade-up"><div class="proj-no">05</div><h3>Contact Point Verification</h3><p>Loan processing verification module integrating third-party geolocation and address verification services. Supports real-time decision-making with mobile-captured location data and photographic evidence. Includes dashboards, reporting, and validation checks.</p><div class="metrics"><span class="tag">ASP.NET Web Forms</span><span class="tag">ASP.NET Core Web API</span><span class="tag">Geolocation API</span><span class="tag">ADO.NET</span><span class="tag">SQL Server</span><span class="tag">JWT</span></div></article>
+      <article class="proj" data-aos="fade-up" data-aos-delay="60"><div class="proj-no">06</div><h3>SMA Backend API - German Gas Company</h3><p>Developed backend APIs to support core business operations and secure system integrations for a German gas company. Focused on scalability, security, performance, and data integrity using clean architecture principles and unit testing.</p><div class="metrics"><span class="tag">ASP.NET Core Web API</span><span class="tag">Entity Framework</span><span class="tag">SQL Server</span><span class="tag">JWT</span><span class="tag">Clean Architecture</span></div></article>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ══════════ FOOTER ══════════ -->
-  <footer>
-    <div class="container">
-      <div class="footer-inner">
-        <div class="footer-logo">Tanvir<span>.</span></div>
-        <p class="footer-copy">© 2026 Tanvir Ahmed. All rights reserved.</p>
-        <div class="footer-socials">
-          <a href="https://www.linkedin.com/in/tanvirahmedse" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="mailto:eyetanvir@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-          <a href="https://github.com/eyetanvir-prog" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
-        </div>
-      </div>
+<section id="education" class="section">
+  <div class="wrap">
+    <div data-aos="fade-up">
+      <div class="kicker">Academic Background</div>
+      <h2 class="display title">Education</h2>
+      <p class="sub">UK-educated with a combination of technical and business qualifications.</p>
     </div>
-  </footer>
+    <div class="edu-grid">
+      <div class="edu" data-aos="fade-up"><b>Master of Business Administration</b><em>Cardiff Metropolitan University</em><span>Wales, United Kingdom · 2013 · Major: International Business</span></div>
+      <div class="edu" data-aos="fade-up" data-aos-delay="60"><b>BSc (Hons) Computer Science</b><em>University of East London</em><span>England, United Kingdom · 2012</span></div>
+      <div class="edu" data-aos="fade-up"><b>GCE A-Level</b><em>British Council</em><span>Dhaka, Bangladesh · 2009</span></div>
+      <div class="edu" data-aos="fade-up" data-aos-delay="60"><b>GCSE O-Level</b><em>British Council</em><span>Dhaka, Bangladesh · 2006</span></div>
+      <div class="lang"><b>IELTS 8/9</b><span>English - General</span></div>
+      <div class="lang"><b>PTE 84/90</b><span>English - Academic</span></div>
+    </div>
+  </div>
+</section>
 
-  <!-- ══════════ SCRIPTS ══════════ -->
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    /* ─── AOS ─── */
-    AOS.init({ duration: 700, once: true, offset: 60 });
+<section id="contact" class="section" style="background: var(--bg2);">
+  <div class="wrap">
+    <div data-aos="fade-up">
+      <div class="kicker">Let's Talk</div>
+      <h2 class="display title">Get in touch</h2>
+      <p class="sub">Open to senior engineering roles, consulting, and interesting collaborations.</p>
+    </div>
+    <div class="contact-grid">
+      <div data-aos="fade-right">
+        <h3 class="display" style="font-size:2rem;margin-bottom:10px;color:var(--ink);">Happy to connect</h3>
+        <p style="margin-bottom:20px;">Whether you have a role in mind, a project to discuss, or just want to say hello - drop me a message and I will get back to you promptly.</p>
+        <a class="item" href="mailto:eyetanvir@gmail.com"><i class="fa-solid fa-envelope"></i><div><small>Email</small><b>eyetanvir@gmail.com</b></div></a>
+        <a class="item" href="tel:+8801795328376"><i class="fa-solid fa-phone"></i><div><small>Phone / WhatsApp</small><b>+880 1795 328376</b></div></a>
+        <a class="item" href="https://www.linkedin.com/in/tanvirahmedse" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin-in"></i><div><small>LinkedIn</small><b>linkedin.com/in/tanvirahmedse</b></div></a>
+        <div class="item"><i class="fa-solid fa-location-dot"></i><div><small>Location</small><b>Dhaka, Bangladesh</b></div></div>
+      </div>
+      <form id="contact-form" action="https://formspree.io/f/xaqalvob" method="POST" data-aos="fade-left">
+        <div class="row">
+          <div class="field"><label for="firstName">First Name</label><input id="firstName" name="firstName" placeholder="John" required /></div>
+          <div class="field"><label for="lastName">Last Name</label><input id="lastName" name="lastName" placeholder="Doe" required /></div>
+        </div>
+        <div class="field"><label for="email">Email Address</label><input id="email" type="email" name="email" placeholder="john@company.com" required /></div>
+        <div class="field"><label for="subject">Subject</label><input id="subject" name="subject" placeholder="Job opportunity / Collaboration / Hello" /></div>
+        <div class="field"><label for="message">Message</label><textarea id="message" name="message" rows="5" placeholder="Tell me about the opportunity or what you have in mind..." required></textarea></div>
+        <button class="btn btn-solid full" type="submit"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
+        <div id="form-status"></div>
+      </form>
+    </div>
+  </div>
+</section>
 
-    /* ─── Navbar scroll ─── */
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-      navbar.classList.toggle('scrolled', window.scrollY > 20);
-    });
+<footer>
+  <div class="wrap foot">
+    <b>Tanvir.</b>
+    <span>&copy; <span id="year"></span> Tanvir Ahmed. All rights reserved.</span>
+    <div class="socials">
+      <a href="https://www.linkedin.com/in/tanvirahmedse" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+      <a href="mailto:eyetanvir@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      <a href="https://github.com/eyetanvir-prog" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+    </div>
+  </div>
+</footer>
 
-    /* ─── Hamburger ─── */
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobile-menu');
-    hamburger.addEventListener('click', () => {
-      mobileMenu.classList.toggle('open');
-    });
-    function closeMenu() { mobileMenu.classList.remove('open'); }
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 700, once: true, offset: 60 });
+  document.getElementById("year").textContent = new Date().getFullYear();
 
-    /* ─── Typewriter ─── */
-    const phrases = [
-      '.NET & C# Expert',
-      'REST API Architect',
-      'Docker & CI/CD Engineer',
-      'Enterprise Systems Builder',
-      'Microservices Practitioner',
-    ];
-    let pi = 0, ci = 0, deleting = false;
-    const tw = document.getElementById('typewriter');
-    function type() {
-      const current = phrases[pi];
-      if (!deleting) {
-        tw.textContent = current.slice(0, ++ci);
-        if (ci === current.length) { deleting = true; setTimeout(type, 1800); return; }
-      } else {
-        tw.textContent = current.slice(0, --ci);
-        if (ci === 0) { deleting = false; pi = (pi + 1) % phrases.length; }
-      }
-      setTimeout(type, deleting ? 45 : 80);
+  const root = document.documentElement;
+  const whiteBtn = document.getElementById("theme-white");
+  const blackBtn = document.getElementById("theme-black");
+  function setTheme(theme) {
+    root.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+    whiteBtn.classList.toggle("on", theme === "light");
+    blackBtn.classList.toggle("on", theme === "dark");
+    document.querySelector('meta[name="theme-color"]').setAttribute("content", theme === "dark" ? "#090909" : "#f4f1ea");
+  }
+  const saved = localStorage.getItem("theme");
+  setTheme(saved || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"));
+  whiteBtn.addEventListener("click", () => setTheme("light"));
+  blackBtn.addEventListener("click", () => setTheme("dark"));
+
+  const navbar = document.getElementById("navbar");
+  window.addEventListener("scroll", () => navbar.classList.toggle("scrolled", window.scrollY > 12));
+  const burger = document.getElementById("burger");
+  const mobile = document.getElementById("mobile");
+  burger.addEventListener("click", () => mobile.classList.toggle("open"));
+  function closeMenu() { mobile.classList.remove("open"); }
+
+  const phrases = [".NET & C# Expert", "REST API Architect", "Docker & CI/CD Engineer", "Enterprise Systems Builder", "Microservices Practitioner"];
+  let pi = 0, ci = 0, deleting = false;
+  const tw = document.getElementById("typewriter");
+  function type() {
+    const current = phrases[pi];
+    tw.textContent = current.slice(0, deleting ? --ci : ++ci);
+    if (!deleting && ci === current.length) { deleting = true; setTimeout(type, 1700); return; }
+    if (deleting && ci === 0) { deleting = false; pi = (pi + 1) % phrases.length; }
+    setTimeout(type, deleting ? 40 : 80);
+  }
+  type();
+
+  const form = document.getElementById("contact-form");
+  const status = document.getElementById("form-status");
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const btn = form.querySelector("button[type=submit]");
+    const original = btn.innerHTML;
+    btn.disabled = true;
+    btn.innerHTML = "Sending...";
+    try {
+      const res = await fetch(form.action, { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } });
+      if (res.ok) {
+        status.className = "ok";
+        status.textContent = "Message sent! I will get back to you soon.";
+        form.reset();
+      } else { throw new Error(); }
+    } catch {
+      status.className = "bad";
+      status.textContent = "Something went wrong. Please email me directly at eyetanvir@gmail.com";
     }
-    type();
-
-    /* ─── Contact form (Formspree) ─── */
-    const form = document.getElementById('contact-form');
-    const status = document.getElementById('form-status');
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const btn = form.querySelector('button[type=submit]');
-      btn.disabled = true;
-      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-      try {
-        const res = await fetch(form.action, {
-          method: 'POST',
-          body: new FormData(form),
-          headers: { 'Accept': 'application/json' }
-        });
-        if (res.ok) {
-          status.className = 'success';
-          status.textContent = 'Message sent! I will get back to you soon.';
-          form.reset();
-        } else {
-          throw new Error();
-        }
-      } catch {
-        status.className = 'error';
-        status.textContent = 'Something went wrong. Please email me directly at eyetanvir@gmail.com';
-      }
-      btn.disabled = false;
-      btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
-    });
-  </script>
+    btn.disabled = false;
+    btn.innerHTML = original;
+  });
+</script>
 </body>
 </html>
